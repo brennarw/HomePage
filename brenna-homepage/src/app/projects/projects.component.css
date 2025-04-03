@@ -1,0 +1,38 @@
+.content {
+    /* width: 90%;
+    min-width: 600px; */
+    background-color: #29524A;
+    color: #FFFFFF;
+}
+
+a {
+    color: #8C8C88;
+    text-decoration: none;
+}
+
+a:hover {
+    background-color:#102542;
+}
+
+h1 {
+    border-top: 10px solid #102542;
+    border-bottom: 10px solid #102542;
+    position: relative;
+    left: 150px;
+}
+
+img {
+    padding-right: 5px;
+}
+
+footer {
+    border-top: 2px solid #0E0906;
+    position: relative;
+    left: 150px;
+}
+
+section {
+    position: relative;
+    left: 150px;
+}
+  
