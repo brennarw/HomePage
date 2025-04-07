@@ -1,0 +1,12 @@
+.content {
+    display: block;
+    background-color: #29524A;
+    color: #FFFFFF;
+}
+
+footer {
+    color: #dfdfdf;         
+    border-top: 2px solid #0E0906;
+    position: relative;
+    left: 150px;
+}

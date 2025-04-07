@@ -1,6 +1,4 @@
 .content {
-    /* width: 90%;
-    min-width: 600px; */
     background-color: #29524A;
     color: #dfdfdf;         
 }
@@ -22,8 +20,9 @@ h1 {
     left: 150px;
 }
 
-li {
-    color: #dfdfdf;         
+h2 {
+    color: #dfdfdf;  
+    background-color: rgb(44, 124, 97);       
 }
 
 img {
@@ -34,4 +33,10 @@ section {
     position: relative;
     left: 150px;
 }
+
+p {
+    color: #dfdfdf;         
+    max-width: 1300px;
+}
+
   
