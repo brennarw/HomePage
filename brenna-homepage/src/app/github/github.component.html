@@ -1,0 +1,39 @@
+<div class="content">
+    <header>
+        <h1>
+            Github Projects
+        </h1>
+    </header>
+    
+    <section>
+        <h2>
+            See My Github Repositories:
+        </h2>
+        
+        <button (click)="getGithubAvatar()">Load Github Avatar</button>
+        <button (click)="getAllProjects()">Load All Github Projects</button>
+        
+        <div *ngIf="user"> <!--ngIf is a conditional, only shows this div tag if user is defined-->
+            <h3>Github Avatar</h3>
+            <img [src]="user.avatar_url" width="100" />
+        </div>
+
+        <div *ngIf="repos.length > 0"> <!--ngIf is a conditional, only shows this div tag if user is defined-->
+            <h3>Github Repositories (select one to get more details)</h3>
+            <ul>
+                <li *ngFor="let repo of repos">
+                  <button (click)="toggleRepo(repo.name)">
+                    {{ repo.name }}
+                  </button>
+                  <div *ngIf="expandedRepo === repo.name && repoInfo" class="details">
+                    <p><b>Lanugage:</b> {{ repoInfo.language }}</p>
+                    <p><b>Size in kilobytes:</b> {{repoInfo.size}}</p>
+                    <a [href]="repoInfo.html_url" target="_blank">View on GitHub</a>
+                    <p><b>Description:</b><br></p>
+                    <markdown [data]="repoInfo.readme"></markdown>
+                  </div>
+                </li>
+              </ul>
+        </div>
+    </section>
+</div>
