@@ -10,8 +10,16 @@
             See My Github Repositories:
         </h2>
         
+        <div>
+          <br>
+        </div>
+
         <button (click)="getGithubAvatar()">Load Github Avatar</button>
         <button (click)="getAllProjects()">Load All Github Projects</button>
+
+        <div>
+          <br>
+        </div>
         
         <div *ngIf="user"> <!--ngIf is a conditional, only shows this div tag if user is defined-->
             <h3>Github Avatar</h3>
@@ -22,14 +30,13 @@
             <h3>Github Repositories (select one to get more details)</h3>
             <ul>
                 <li *ngFor="let repo of repos">
-                  <button (click)="toggleRepo(repo.name)">
+                  <button (click)="toggleRepo(repo.name)" id="repo-button">
                     {{ repo.name }}
                   </button>
                   <div *ngIf="expandedRepo === repo.name && repoInfo" class="details">
                     <p><b>Lanugage:</b> {{ repoInfo.language }}</p>
                     <p><b>Size in kilobytes:</b> {{repoInfo.size}}</p>
                     <a [href]="repoInfo.html_url" target="_blank">View on GitHub</a>
-                    <p><b>Description:</b><br></p>
                     <markdown [data]="repoInfo.readme"></markdown>
                   </div>
                 </li>

@@ -1,0 +1,30 @@
+<div class="content">
+    <header>
+        <h1>
+            How to use Observable Plot!
+        </h1>
+    </header>
+    <section>
+        <button (click)="togglePenguin()">Penguin Data</button>
+        <button (click)="getTrafficCharts()">Traffic Data</button>
+
+        <div *ngIf="showPenguinCharts">
+            <h3>Select a feature to compare against the different species:</h3>
+            <p>
+                This section highlights how easy it is to adjust which features you are comparing in order to quickly identify which features are the best classifiers for a given dataset!
+            </p>
+            <button (click)="getPenguinCharts('flipper_length_mm', 'steelblue')">Flipper Length</button>
+            <button (click)="getPenguinCharts('bill_length_mm', 'pink')">Bill Length</button>
+            <button (click)="getPenguinCharts('bill_depth_mm', 'purple')">Bill Depth</button>
+            <button (click)="getPenguinCharts('body_mass_g', 'red')">Body Mass</button>
+        </div>
+
+        <div *ngIf="showTrafficCharts">
+            <p>This chart highlights the grouping feature of Observable Plot by displaying a chart that groups traffic data both on location and hour in order to create
+                a heatmap that depicts the busiest times <br/> of the day per location. 
+            </p>
+        </div>
+
+        <div #plotContainer></div>
+    </section>
+</div>

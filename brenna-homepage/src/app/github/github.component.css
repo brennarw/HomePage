@@ -1,6 +1,4 @@
 .content {
-    /* width: 90%;
-    min-width: 600px; */
     background-color: #29524A;
     color: #dfdfdf;                
 }
@@ -27,11 +25,6 @@ h2 {
     background-color: rgb(44, 124, 97);
 }
 
-h3 { 
-    color: #dfdfdf;         
-    text-decoration: underline;
-}
-
 img {
     padding-right: 5px;
 }
@@ -49,5 +42,27 @@ section {
 
 li {
     max-width: 1300px;
+}
+
+#repo-button {
+    border-radius: 10px;
+    padding: 7px 20px;
+    background-color: #102542;
+    color: rgb(192, 212, 242);
+    font-family: "Times New Roman";
+    font-size: 15px;
+}
+
+h3 {
+    color: #83b1ed;
+}
+
+button {
+    border-radius: 20px;
+    padding: 10px 25px;
+    background-color: #102542;
+    color: #dfdfdf;
+    font-family: "Times New Roman";
+    font-size: 15px;
 }
   
