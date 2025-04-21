@@ -1,27 +1,50 @@
 <div class="content">
     <header>
         <h1>
-            How to use Observable Plot!
+            Examples of Observable Plot with Angular!
         </h1>
     </header>
     <section>
         <button (click)="togglePenguin()">Penguin Data</button>
         <button (click)="getTrafficCharts()">Traffic Data</button>
+        <button (click)="toggleOlympics()">Olympic Data</button>
+
+        <div>
+            <br>
+        </div>
 
         <div *ngIf="showPenguinCharts">
             <h3>Select a feature to compare against the different species:</h3>
             <p>
                 This section highlights how easy it is to adjust which features you are comparing in order to quickly identify which features are the best classifiers for a given dataset!
             </p>
-            <button (click)="getPenguinCharts('flipper_length_mm', 'steelblue')">Flipper Length</button>
-            <button (click)="getPenguinCharts('bill_length_mm', 'pink')">Bill Length</button>
-            <button (click)="getPenguinCharts('bill_depth_mm', 'purple')">Bill Depth</button>
-            <button (click)="getPenguinCharts('body_mass_g', 'red')">Body Mass</button>
+            <button id="subButton" (click)="getPenguinCharts('flipper_length_mm', 'steelblue')">Flipper Length</button>
+            <button id="subButton" (click)="getPenguinCharts('bill_length_mm', 'pink')">Bill Length</button>
+            <button id="subButton" (click)="getPenguinCharts('bill_depth_mm', 'purple')">Bill Depth</button>
+            <button id="subButton" (click)="getPenguinCharts('body_mass_g', 'red')">Body Mass</button>
+        </div>
+
+        <div *ngIf="showOlympicCharts">
+            <h3>Select a chart to visualize the Olympic Data:</h3>
+            <button id="subButton" (click)="getOlympicScatterChart()">Scatter Plot</button>
+            <button id="subButton" (click)="getOlympicBarChart()">Bar Chart</button>
+        </div>
+
+        <div *ngIf="showOlympicScatter">
+            <p>This scatter plot highlights the 'tip' feature that allows you to make the charts interactive. 
+                In this plot, the extra channels 'name' and 'sport' are added to the tooltip when the mouse hovers over each point. </p>
+        </div>
+
+        <div *ngIf="showOlympicBar">
+            <p>This bar chart highlights the benefit of the inline transformations Observable Plot provides by grouping on sport and classifying by sex. 
+                The code for this chart also heavily relies on the inline CSS styling <br/> of Observable Plot in order to produce a more visually pleasing and organized plot. For example,
+                styling is used to rotate the x-axis labels by 90 degrees, change the font size of the x-axis labels, and <br/> add padding inbetween each sport grouping. 
+            </p>
         </div>
 
         <div *ngIf="showTrafficCharts">
-            <p>This chart highlights the grouping feature of Observable Plot by displaying a chart that groups traffic data both on location and hour in order to create
-                a heatmap that depicts the busiest times <br/> of the day per location. 
+            <p>This chart highlights the inline data transformation feature of Observable Plot by using the grouping feature and displaying a chart that groups traffic data both on location and hour in order to create
+                a <br/> heatmap that depicts the busiest times of the day per location. 
             </p>
         </div>
 
