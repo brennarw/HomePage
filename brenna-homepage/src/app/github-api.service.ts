@@ -26,15 +26,15 @@ export class GithubApiService {
   }
 
   
-getReadme(repoName: string): Observable<string> {
-  const url = `${this.repoURL}/${repoName}/readme`;
-  return this.http.get<any>(url).pipe(
-    map(response => {
-      const decoded = atob(response.content);
-      return decoded;
-    })
-  );
-}
+  getReadme(repoName: string): Observable<string> {
+    const url = `${this.repoURL}/${repoName}/readme`;
+    return this.http.get<any>(url).pipe(
+      map(response => {
+        const decoded = atob(response.content);
+        return decoded;
+      })
+    );
+  }
 
 
 }

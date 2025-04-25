@@ -41,7 +41,7 @@ export class ChartingComponent {
     this.showTrafficCharts = false;
   }
 
-  getPenguinCharts(y_label: string, color: string) {
+  getPenguinCharts(y_label: string) {
     if (this.showPenguinCharts) {
       if (isPlatformBrowser(this.platformId)){ //isPlatformBrowser() ensures the chart is only rendered on the client
         fetch('data/penguins_with_labels.csv')
@@ -101,7 +101,7 @@ export class ChartingComponent {
                   Plot.cell(
                     trafficData,
                     Plot.group(
-                      {fill: "median"}, //this first groups the x axis and finds the median number of vehicles for each <location, hour> pair
+                      {fill: "median"}, //this groups the x axis and finds the median number of vehicles for each <location, hour> pair
                       { //this second part tells the plot how to group the data before the above fill is applied 
                         x: d => new Date(d.date * 1000).getUTCHours(), //group by hour
                         y: "location", //group by location
